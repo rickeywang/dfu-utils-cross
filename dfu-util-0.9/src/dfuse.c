@@ -235,6 +235,18 @@ int dfuse_special_command(struct dfu_if *dif, unsigned int address,
 				printf("Setting timeout to 35 seconds\n");
 			}
 		}
+		// PALETTE
+		/**
+		 * STM32L4 probably sends bogus bwPollTimeout values, causing the
+		 * commands to fail. 
+		 * 
+		 * This hack is based on version.txt for DfuSe V3.0.6 as 
+		 * well as https://community.st.com/s/question/0D50X00009XkWmoSAF/dfu-error-bad-state-machine-in-firmware
+		 * 
+		 * The shortest bwPollTimeout observed was 10ms, and always seems to fail on the
+		 * 10ms ones. So add 20ms to this. Seems to work. 
+		 */
+		dst.bwPollTimeout += 20; 
 		/* wait while command is executed */
 		if (verbose)
 			printf("   Poll timeout %i ms\n", dst.bwPollTimeout);
