@@ -195,6 +195,7 @@ static void help(void)
 static void print_version(void)
 {
 	printf(PACKAGE_STRING "\n\n");
+	printf("\n !!! NOTE: Contains STM32L4 workaround in dfuse.c !!! \n");
 	printf("Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.\n"
 	       "Copyright 2010-2016 Tormod Volden and Stefan Schmidt\n"
 	       "This program is Free Software and has ABSOLUTELY NO WARRANTY\n"
