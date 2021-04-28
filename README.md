@@ -1,3 +1,7 @@
+# Forked Notes
+
+This fork has added delays to make it work on STM32L4 devices. For more details, see commit 4e058c737da74091e3f39e2ea45041a83cb128e6
+
 # dfu-utils-cross
 
 This repo contains the scripts to compile (and cross-compile from a Linux machine) `dfu-utils` package for Linux (x86_64, x86, arm), OSX and Windows.
